@@ -1,0 +1,115 @@
+/* Main Job Match Section */
+.job-match {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: transparent; /* Make the text transparent */
+  background: linear-gradient(to right, #ffffff, #dfd1f3, #998f8f); /* Change these colors to your desired gradient */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  background-clip: text; /* For Firefox */
+}
+
+
+.ai-powered-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button-shaped-box {
+  border-radius: 0.6rem;
+  padding: 0.4rem 1.2rem; /* Increased padding for larger button */
+  font-size: 1rem; /* Increased font size */
+  font-weight: 500;
+  background: linear-gradient(90deg, black, grey);
+  font-weight: 500;
+  background: linear-gradient(90deg, black, grey);
+  color: rgb(207, 193, 193);
+}
+
+/* Button Styling */
+.job-button {
+  background: linear-gradient(90deg, #111111, #111111);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 
+    width 1.2s ease, 
+    height 1.2s ease, 
+    padding 1.2s ease, 
+    border-radius 1.2s ease, 
+    transform 0.2s ease; /* Quick hover transition */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents content overflow during transformation */
+  width: 12.5rem; /* Initial button width */
+  height: 2.2rem; /* Initial button height */
+}
+
+.job-button:hover {
+  transform: scale(1.05); /* Fast hover scale */
+}
+
+.job-button:focus {
+  outline: none;
+}
+
+.job-button:active {
+  background-color: #4c4e50;
+}
+
+/* Transforming Button to Form */
+.form-visible.job-button {
+  width: 25rem; /* Final form width */
+  height: 18.75rem; /* Final form height */
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  transition: 
+    width 1.2s ease, 
+    height 1.2s ease, 
+    padding 1.2s ease, 
+    border-radius 1.2s ease;
+}
+
+/* Smooth Transition for Form Elements */
+.skill-form {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.form-visible .skill-form {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Transition for Form Labels and Button */
+.skill-form label, .skill-form button {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.form-visible .skill-form label, .form-visible .skill-form button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-form label {
+  display: block;
+  margin: 0.6rem 0;
+}
+
+/* Additional Button Styles (if needed) */
+.button-shaped-box, .ai-powered-wrap button {
+  /* Style for other buttons on the page */
+  transition: background 0.2s ease, transform 0.2s ease;
+}

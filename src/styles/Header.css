@@ -1,0 +1,11 @@
+.header {
+    position: absolute;
+    top: 1.25rem; /* 20px converted to rem */
+    left: 1.25rem; /* 20px converted to rem */
+    color: white;
+}
+  
+.logo {
+    font-size: 3.125rem; /* 50px converted to rem */
+    /* Other styles */
+}
