@@ -4,12 +4,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: transparent; /* Make the text transparent */
-  background: linear-gradient(to right, #be0f61, #1b08c7); /* Change these colors to your desired gradient */
-  -webkit-background-clip: text; /* Clip the background to the text */
-  background-clip: text; /* For Firefox */
+  color: transparent;
+  background: linear-gradient(to right, #be0f61, #1b08c7);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
-
 
 .ai-powered-wrap {
   display: inline-flex;
@@ -18,11 +17,10 @@
 
 .button-shaped-box {
   border-radius: 0.6rem;
-  padding: 0.4rem 1.2rem; /* Increased padding for larger button */
-  font-size: 1rem; /* Increased font size */
+  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   background: linear-gradient(90deg, rgb(180, 178, 178), rgb(223, 218, 218));
-  font-weight: 500;
   color: rgb(97, 79, 79);
 }
 
@@ -35,23 +33,18 @@
   padding: 0.6rem 1.2rem;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: 
-    width 1.2s ease, 
-    height 1.2s ease, 
-    padding 1.2s ease, 
-    border-radius 1.2s ease, 
-    transform 0.2s ease; /* Quick hover transition */
+  transition: width 1.2s ease, height 1.2s ease, padding 1.2s ease, border-radius 1.2s ease, transform 0.2s ease;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevents content overflow during transformation */
-  width: 12.5rem; /* Initial button width */
-  height: 2.2rem; /* Initial button height */
+  overflow: hidden;
+  width: 12.5rem;
+  height: 2.2rem;
 }
 
 .job-button:hover {
-  transform: scale(1.05); /* Fast hover scale */
+  transform: scale(1.05);
 }
 
 .job-button:focus {
@@ -64,22 +57,18 @@
 
 /* Transforming Button to Form */
 .form-visible.job-button {
-  width: 25rem; /* Final form width */
-  height: 18.75rem; /* Final form height */
-  padding: 1.25rem;
+  width: 32rem; /* Increase width slightly for better spacing */
+  height: 40rem; /* Increase height for better visibility */
+  padding: 1.5rem; /* Increase padding for better spacing */
   border-radius: 0.5rem;
-  transition: 
-    width 1.2s ease, 
-    height 1.2s ease, 
-    padding 1.2s ease, 
-    border-radius 1.2s ease;
+  transition: width 1.2s ease, height 1.2s ease, padding 1.2s ease, border-radius 1.2s ease;
 }
 
-/* Smooth Transition for Form Elements */
+/* Skill Form Styling */
 .skill-form {
   background-color: transparent;
   border-radius: 0.5rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
   opacity: 0;
   transform: scale(0.85);
   transition: opacity 1.2s ease, transform 1.2s ease;
@@ -90,25 +79,75 @@
   transform: scale(1);
 }
 
-/* Transition for Form Labels and Button */
-.skill-form label, .skill-form button {
-  opacity: 0;
-  transform: translateY(1.25rem);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+.skill-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
-.form-visible .skill-form label, .form-visible .skill-form button {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Form Field Styling */
 .skill-form label {
   display: block;
-  margin: 0.6rem 0;
+  margin: 0.8rem 0; /* Increase margin for more spacing between fields */
+  color: #ffffff;
+  font-weight: 500;
 }
 
-/* Additional Button Styles (if needed) */
-.button-shaped-box, .ai-powered-wrap button {
-  /* Style for other buttons on the page */
-  transition: background 0.2s ease, transform 0.2s ease;
+.skill-form input[type="text"],
+.skill-form input[type="number"],
+.skill-form select {
+  width: 100%;
+  padding: 0.6rem; /* Increase padding for better visibility */
+  margin-top: 0.3rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #333333;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.skill-form input[type="text"]::placeholder,
+.skill-form input[type="number"]::placeholder {
+  color: #bbbbbb;
+}
+
+.skill-form select {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.skill-form button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #4c4e50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.skill-form button:hover {
+  background-color: #6c6e70;
+}
+
+/* Transition for Form Labels and Button */
+.skill-form label, 
+.skill-form button, 
+.skill-form input, 
+.skill-form select {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.form-visible .skill-form label, 
+.form-visible .skill-form button,
+.form-visible .skill-form input,
+.form-visible .skill-form select {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }

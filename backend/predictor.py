@@ -26,13 +26,7 @@ class JobPredictor:
         self.df = None
         self.skills_column = None
         
-        # Ensure NLTK resources are available
-        try:
-            find('tokenizers/punkt')
-            find('corpora/stopwords')
-        except LookupError:
-            nltk.download('punkt')
-            nltk.download('stopwords')
+
         
         # Load the model
         self.load_model()
@@ -54,9 +48,9 @@ class JobPredictor:
         """Find the best job match using the loaded model"""
         try:
             # Filter based on qualifications and preference
-            filtered_df = self.df[
-                (self.df['Qualifications'] == qualifications) &
-                ((self.df['Preference'] == preference) | (self.df['Preference'] == 'Both') | (preference == 'Both'))
+            filtered_df = self.df[(
+                self.df['Qualifications'] == qualifications) &
+                ((self.df['Preference'] == preference) | (self.df['Preference'] == 'Both'))
             ]
             
             # Filter based on salary range
@@ -87,50 +81,4 @@ class JobPredictor:
         except Exception as e:
             return f"An error occurred while finding matches: {str(e)}"
 
-if __name__ == "__main__":
-    # Example usage
-    try:
-        # Initialize predictor
-        predictor = JobPredictor()
-        
-        # Get user input
-        print("\nEnter job search criteria:")
-        input_skills = input("Enter your skills (e.g., 'public speaking, social media'): ")
-        qualifications = input("Enter your qualification (e.g., 'BCA'): ")
-        
-        # Get salary range
-        min_salary = int(input("Enter minimum salary($/annum) in K (e.g., 50): "))
-        max_salary = int(input("Enter maximum salary($/annum) in K (e.g., 100): "))
-        salary_range = (min_salary, max_salary)
-        
-        # Get experience range
-        min_exp = int(input("Enter minimum experience in years (e.g., 2): "))
-        max_exp = int(input("Enter maximum experience in years (e.g., 10): "))
-        experience_range = (min_exp, max_exp)
-        
-        preference = input("Enter preference (Male/Female): ")
-        
-        # Get prediction
-        best_match = predictor.predict(input_skills, qualifications, salary_range, experience_range, preference)
-        
-        # Display results
-        if isinstance(best_match, str):
-            print(best_match)
-        else:
-            print("\nBest matching job:")
-            print(f"Title: {best_match['Job Title']}")
-            print(f"Role: {best_match['Role']}")
-            print(f"Company: {best_match['Company']}")
-            
-            salary_tuple = format_range_output(best_match['SalaryRange'])
-            exp_tuple = format_range_output(best_match['ExperienceRange'])
-            
-            if salary_tuple:
-                print(f"Salary Range: ${salary_tuple[0]}K-${salary_tuple[1]}K")
-            if exp_tuple:
-                print(f"Experience Range: {exp_tuple[0]}-{exp_tuple[1]} years")
-            
-            print(f"Skills: {best_match['skills']}")
-    
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
+# Example usage removed, as it's not needed in a Flask context
