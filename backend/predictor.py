@@ -25,10 +25,6 @@ class JobPredictor:
         self.df = None
         self.skills_column = None
         
-
-        nltk.download('punkt')
-        nltk.download('punkt_tab')
-        nltk.download('stopwords')
         # Load the model
         self.load_model()
     
