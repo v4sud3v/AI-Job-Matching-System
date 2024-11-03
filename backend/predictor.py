@@ -47,7 +47,7 @@ class JobPredictor:
             # Filter based on qualifications and preference
             filtered_df = self.df[(
                 self.df['Qualifications'] == qualifications) &
-                ((self.df['Preference'] == preference) | (self.df['Preference'] == 'Both'))
+                ((self.df['Preference'] == preference) | (self.df['Preference'] == 'Both')|(preference == 'Any'))
             ]
             
             # Filter based on salary range

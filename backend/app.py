@@ -27,13 +27,13 @@ def predict_job():
     qualifications = data.get('qualifications', '')
     # Convert salary and experience fields to integers, with a default value of 0 if not provided
     min_salary = int(data.get('minSalary', 0) or 0)
-    max_salary = int(data.get('maxSalary', 0) or 0)
+    max_salary = int(data.get('maxSalary', 0) or 200)
     salary_range = (min_salary, max_salary)
 
     min_exp = int(data.get('minExperience', 0) or 0)
-    max_exp = int(data.get('maxExperience', 0) or 0)
+    max_exp = int(data.get('maxExperience', 0) or 25)
     experience_range = (min_exp, max_exp)
-    preference = data.get('preference', '')
+    preference = data.get('preference', 'Any')
 
     # Predict job match
     result = predictor.predict(
