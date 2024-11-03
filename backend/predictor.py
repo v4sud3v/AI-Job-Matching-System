@@ -3,7 +3,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
-from nltk.data import find
 
 def extract_keywords(text):
     """Extract keywords from text after removing stopwords"""
@@ -27,7 +26,9 @@ class JobPredictor:
         self.skills_column = None
         
 
-        
+        nltk.download('punkt')
+        nltk.download('punkt_tab')
+        nltk.download('stopwords')
         # Load the model
         self.load_model()
     

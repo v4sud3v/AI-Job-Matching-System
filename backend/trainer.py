@@ -11,8 +11,10 @@ def download_nltk_resources():
     """Download required NLTK resources if not already present"""
     try:
         find('tokenizers/punkt')
+
     except LookupError:
         nltk.download('punkt')
+        nltk.download('punkt_tab')
     
     try:
         find('corpora/stopwords')
