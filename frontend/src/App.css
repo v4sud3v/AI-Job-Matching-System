@@ -1,27 +1,28 @@
 /* App.css */
-body, #root {
-  height: 100%;
+html, body {
   margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
 }
 
 .App {
-  position: relative; /* Ensure App is the positioning context */
-  height: 100vh;
-  font-family: 'Ubuntu', sans-serif;
-  overflow: hidden; /* Hide any overflow */
-}
-
-/* Set the particles to fill the entire background */
-#tsparticles {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
-  z-index: 0; /* Ensure particles are behind other components */
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .Header, .JobMatch {
-  position: relative; /* Position above the particles */
-  z-index: 1; /* Ensure they appear above the background */
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }

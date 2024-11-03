@@ -1,4 +1,4 @@
-/* Main Job Match Section */
+/* JobMatch.css */
 .job-match {
   display: flex;
   justify-content: center;
@@ -8,11 +8,17 @@
   background: linear-gradient(to right, #be0f61, #1b08c7);
   -webkit-background-clip: text;
   background-clip: text;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .ai-powered-wrap {
   display: inline-flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .button-shaped-box {
@@ -22,9 +28,9 @@
   font-weight: 500;
   background: linear-gradient(90deg, rgb(180, 178, 178), rgb(223, 218, 218));
   color: rgb(97, 79, 79);
+  white-space: nowrap;
 }
 
-/* Button Styling */
 .job-button {
   background: linear-gradient(90deg, #111111, #111111);
   color: white;
@@ -33,14 +39,16 @@
   padding: 0.6rem 1.2rem;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: width 1.2s ease, height 1.2s ease, padding 1.2s ease, border-radius 1.2s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: 12.5rem;
-  height: 2.2rem;
+  width: 100%;
+  max-width: 200px;
+  min-height: 44px;
+  margin: 0 auto;
 }
 
 .job-button:hover {
@@ -55,23 +63,27 @@
   background-color: #4c4e50;
 }
 
-/* Transforming Button to Form */
 .form-visible.job-button {
-  width: 32rem; /* Increase width slightly for better spacing */
-  height: 40rem; /* Increase height for better visibility */
-  padding: 1.5rem; /* Increase padding for better spacing */
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  transition: width 1.2s ease, height 1.2s ease, padding 1.2s ease, border-radius 1.2s ease;
+  transition: all 0.3s ease;
 }
 
-/* Skill Form Styling */
 .skill-form {
   background-color: transparent;
   border-radius: 0.5rem;
   padding: 1.5rem;
   opacity: 0;
   transform: scale(0.85);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .form-visible .skill-form {
@@ -85,10 +97,9 @@
   color: #ffffff;
 }
 
-/* Form Field Styling */
 .skill-form label {
   display: block;
-  margin: 0.8rem 0; /* Increase margin for more spacing between fields */
+  margin: 0.8rem 0;
   color: #ffffff;
   font-weight: 500;
 }
@@ -97,7 +108,7 @@
 .skill-form input[type="number"],
 .skill-form select {
   width: 100%;
-  padding: 0.6rem; /* Increase padding for better visibility */
+  padding: 0.6rem;
   margin-top: 0.3rem;
   border-radius: 0.4rem;
   border: 1px solid #ddd;
@@ -127,13 +138,13 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  width: 100%;
 }
 
 .skill-form button:hover {
   background-color: #6c6e70;
 }
 
-/* Transition for Form Labels and Button */
 .skill-form label, 
 .skill-form button, 
 .skill-form input, 
@@ -150,4 +161,36 @@
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .job-match {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .job-button {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .form-visible.job-button {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .skill-form {
+    padding: 1rem;
+  }
+
+  .skill-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .skill-form input[type="text"],
+  .skill-form input[type="number"],
+  .skill-form select,
+  .skill-form button {
+    font-size: 0.9rem;
+  }
 }
