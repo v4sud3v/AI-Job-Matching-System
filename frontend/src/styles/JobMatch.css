@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   color: transparent; /* Make the text transparent */
-  background: linear-gradient(to right, #ffffff, #dfd1f3, #998f8f); /* Change these colors to your desired gradient */
+  background: linear-gradient(to right, #be0f61, #1b08c7); /* Change these colors to your desired gradient */
   -webkit-background-clip: text; /* Clip the background to the text */
   background-clip: text; /* For Firefox */
 }
@@ -21,10 +21,9 @@
   padding: 0.4rem 1.2rem; /* Increased padding for larger button */
   font-size: 1rem; /* Increased font size */
   font-weight: 500;
-  background: linear-gradient(90deg, black, grey);
+  background: linear-gradient(90deg, rgb(180, 178, 178), rgb(223, 218, 218));
   font-weight: 500;
-  background: linear-gradient(90deg, black, grey);
-  color: rgb(207, 193, 193);
+  color: rgb(97, 79, 79);
 }
 
 /* Button Styling */

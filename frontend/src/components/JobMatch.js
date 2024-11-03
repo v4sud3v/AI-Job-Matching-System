@@ -3,7 +3,7 @@ import '../styles/JobMatch.css';
 
 function Ai() {
   return (
-    <div className="button-shaped-box" style={{ border: '1px solid black' }}>
+    <div className="button-shaped-box" style={{ border: '0.5px solid black' }}>
       AI-Powered
     </div>
   );
