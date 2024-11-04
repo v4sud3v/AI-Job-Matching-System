@@ -163,6 +163,17 @@
   transition-delay: 0.3s;
 }
 
+.result-box {
+  margin-top: 1.25rem;
+  padding: 0.9375rem;
+  border: 0.0625rem solid #ccc;
+  background: linear-gradient(to right, #111111, #666666);
+  border-radius: 0.75rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #dfd9d9;
+}
+
 @media (max-width: 768px) {
   .job-match {
     width: 95%;

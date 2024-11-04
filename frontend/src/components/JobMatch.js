@@ -21,6 +21,7 @@ function JobMatch() {
     maxExperience: '',
     preference: ''
   });
+  const [resultMessage, setResultMessage] = useState(''); // State to store result message
   const fieldsRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -33,6 +34,7 @@ function JobMatch() {
 
   const handleButtonClick = () => {
     setIsFieldsVisible(true);
+    setResultMessage(''); // Clear the result box when "Find Your Match" is clicked
   };
 
   const handleOutsideClick = (event) => {
@@ -50,7 +52,6 @@ function JobMatch() {
   };
 
   const handleSubmit = async () => {
-    // Sending data to the backend API
     try {
       const response = await fetch('http://127.0.0.1:5000/predict', {
         method: 'POST',
@@ -60,10 +61,26 @@ function JobMatch() {
         body: JSON.stringify(formData)
       });
       const result = await response.json();
-      alert(result.message || JSON.stringify(result));
+
+      // Format the result message
+      const formattedMessage = Object.entries(result)
+        .map(([key, value]) => `<strong>${key}:</strong> ${value}`)
+        .join('<br/>');
+
+      setResultMessage(formattedMessage); // Update result message
+      setIsFieldsVisible(false); // Hide the form after submit
+      setFormData({
+        skills: '',
+        qualifications: '',
+        minSalary: '',
+        maxSalary: '',
+        minExperience: '',
+        maxExperience: '',
+        preference: ''
+      });
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred while predicting the job match.');
+      setResultMessage('An error occurred while predicting the job match.'); // Update on error
     }
   };
 
@@ -168,6 +185,11 @@ function JobMatch() {
           'Find Your Match'
         )}
       </div>
+
+      {/* Display the result box if there is a result message */}
+      {resultMessage && (
+        <div className="result-box" dangerouslySetInnerHTML={{ __html: resultMessage }} />
+      )}
     </section>
   );
 }
