@@ -3,7 +3,7 @@ import '../styles/JobMatch.css';
 
 function Ai() {
   return (
-    <div className="button-shaped-box" style={{ border: '0.5px solid black' }}>
+    <div className="button-shaped-box" >
       AI-Powered
     </div>
   );
@@ -122,13 +122,23 @@ function JobMatch() {
             </label>
             <label>
               Qualifications
-              <input
-                type="text"
+              <select
                 name="qualifications"
                 value={formData.qualifications}
                 onChange={handleInputChange}
-                placeholder="e.g., BCA"
-              />
+              >
+                <option value="">Select</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="BCA">BCA</option>
+                <option value="PhD">PhD</option>
+                <option value="MBA">MBA</option>
+                <option value="MCA">MCA</option>
+                <option value="M.Com">M.Com</option>
+                <option value="BBA">BBA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="B.Com">B.Com</option>
+                <option value="BA">BA</option>
+              </select>
             </label>
             <label>
               Minimum Salary (K)
